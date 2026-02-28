@@ -1,12 +1,16 @@
 #Lab: Username enumeration via different responses
 Overview
+
 This lab demonstrates a brute-force attack against a web login form.
 The primary objective was not to analyze complex application logic, but to correctly configure and use offensive security tools for credential enumeration.
+
 The lab was completed on the PortSwigger Web Security Academy platform by PortSwigger.
 Objective
+
 Perform a brute-force attack against a login endpoint using:
 Burp Suite (Intruder)
 ffuf (alternative approach due to Community edition limitations)
+
 ##Method 1 — Burp Suite (Intruder)
 Tool used: Burp Suite
 Steps
@@ -28,6 +32,7 @@ Successful authentication often results in:
 Different response size
 Redirect (302)
 Different status code
+
 ##Method 2 — Using ffuf
 Tool used: ffuf
 Due to performance limitations of Burp Community Edition, the brute-force attack was executed using ffuf.
@@ -46,10 +51,12 @@ Parameter Breakdown
 -request → raw HTTP request file
 -w → wordlists mapped to placeholders
 -fc 200 → filters out HTTP 200 responses
+
 In this lab, failed login attempts returned HTTP 200, so filtering them allowed easier identification of abnormal responses.
 Important Considerations
 Do not edit wordlists or request files in non-standard text editors.
 Some editors modify encoding or line endings.
+
 Always verify:
 Status codes
 Response size

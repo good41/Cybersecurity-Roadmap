@@ -47,7 +47,7 @@ During the brute-force attack, a successful login attempt returned the following
 
 HTTP 302 Found
 
-Location: /my-account
+Location:  /my-account
 
 This redirect indicates successful authentication and grants access to the target account.
 

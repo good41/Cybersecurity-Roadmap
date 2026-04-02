@@ -40,7 +40,7 @@ The server trusts the `username` parameter from the request instead of strictly 
 
 This results in a **broken authentication logic vulnerability**.
 
-## 📌 Key Takeaways
+## Key Takeaways
 
 - Always verify that reset tokens are bound to a specific user.
 - Never trust client-controlled parameters in sensitive flows.

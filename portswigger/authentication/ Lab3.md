@@ -1,20 +1,16 @@
 # Lab: Password Reset Broken Logic
 
-## 🎯 Objective
+## Objective
 
 Exploit flawed password reset logic to gain access to another user's account.
 
----
-
-## 🧩 Initial Information
+## Initial Information
 
 The lab provides:
 - A valid account with access to its email.
 - The goal is to reset the password of another user.
 
----
-
-## 🔍 Analysis
+## Analysis
 
 1. Clicked **"Forgot password"**.
 2. Entered the username of the account for which we have email access.
@@ -28,9 +24,7 @@ During analysis of the intercepted request, it was observed that:
 
 This indicates a logic flaw — the server does not properly bind the reset token to a specific user.
 
----
-
-## 🛠 Exploitation Steps
+## Exploitation Steps
 
 1. Intercept the password reset request in Burp.
 2. Modify the `username` parameter to the target account.
@@ -38,17 +32,13 @@ This indicates a logic flaw — the server does not properly bind the reset toke
 4. Set a new password for the target user.
 5. Log in successfully using the target username and the newly set password.
 
----
-
-## ❗ Why This Works
+## Why This Works
 
 The application fails to properly validate that the reset token belongs to the same user whose password is being changed.
 
 The server trusts the `username` parameter from the request instead of strictly associating the reset token with a specific account.
 
 This results in a **broken authentication logic vulnerability**.
-
----
 
 ## 📌 Key Takeaways
 

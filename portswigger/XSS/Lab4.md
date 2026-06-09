@@ -10,11 +10,15 @@ This vulnerability occurs because user-controlled data from `location.search` is
 
 2. Identify that data from `location.search` is written to the page through `document.write()`. During the analysis, it becomes apparent that the application uses a parameter that is not directly visible in the page interface.
 
+<img width="1918" height="1078" alt="LAB1" src="https://github.com/user-attachments/assets/dbc538ce-a76d-40b7-b18c-39cd8e7d431d" />
+
 3. Supply a crafted value through the URL parameter:
 
 ```text
 ?ProductId=1&StoreId=<script>alert(1)</script>
 ```
+
+<img width="1918" height="1078" alt="Lab2" src="https://github.com/user-attachments/assets/f7eb33a4-13d0-4170-b33c-36e2c88d1e8c" />
 
 4. Reload the page and observe that the injected JavaScript executes in the victim's browser context.
 
